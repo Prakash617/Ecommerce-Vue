@@ -14,7 +14,7 @@
 
 import Pets from "../components/pets/pets.vue"
 import AddPets from "../components/pets/AddPet.vue"
-import EditPet from "../components/pets/EditPet.vue"
+// import EditPet from "../components/pets/EditPet.vue"
 import { ref, onMounted } from "vue";
 
 
