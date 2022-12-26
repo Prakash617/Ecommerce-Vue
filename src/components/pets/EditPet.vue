@@ -1,6 +1,7 @@
 <script setup>
 import { Modal } from 'flowbite-vue'
 import { ref, reactive } from 'vue'
+import { editPet } from '../../helper/index'
 
 const isShowModal = ref(false)
 const emit = defineEmits("edit-pet")
@@ -16,38 +17,19 @@ const props = defineProps(['pet'])
 
 
 // })
+
 const editpet = reactive({'key':'praksh'})
-const onSubmit = (e) => { 
-  console.log(e)
+const onSubmit = () => { 
+  console.log(props.pet.id)
+  const id = props.pet.id
+
+  editPet(id,props.pet )
+ 
   
-  // closeModal()
-  
-  console.log("edit trigger",editpet) 
-  // emit('edit-pet',pet)
-  // console.log('pet',pet)
+  closeModal()
 
-}
 
-// const emit = defineEmits("editPet")
-// const onSubmit = (e) => {
-//   console.log('before',pet)
-//   const newPet = {
-//     id: pet.id,
-//     name: pet.name,
-//     age: pet.age,
-//     url: pet.url,
-//     favorate:pet.favorate,
-
-//   };
-
-//   emit('getPet',newPet)
-
-//   pet.name = ""
-//   pet.age = ""
-//   pet.url = ""
-//   pet.favorate=false,
-//   console.log('after',pet)
-// }
+};
 </script>
 <template>
   <div class="p-4">
@@ -66,7 +48,7 @@ const onSubmit = (e) => {
       <template #body>
 
 
-        <form class="w-5/6 mx-auto" @submit.prevent="onSubmit(pet)">
+        <form class="w-5/6 mx-auto" @submit.prevent="onSubmit()">
           <div class="mb-6">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your pet name</label>
             <input v-model="pet.name" type="text" id="name"

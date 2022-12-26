@@ -2,6 +2,7 @@
 
 // import Home from "./views/Home.vue"
 import NavBar from "./views/NavBar.vue"
+import { RouterView } from "vue-router";
 // import Option from "./views/Option.vue"
 // import SideBar from "./views/SideBar.vue";
 // import Carousel from "./views/Carousel.vue";
@@ -13,7 +14,7 @@ import NavBar from "./views/NavBar.vue"
     <!-- <SideBar />  -->
 
     <NavBar />
-    <router-view />
+    <RouterView />
     
 
 

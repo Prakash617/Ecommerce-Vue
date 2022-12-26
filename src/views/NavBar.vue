@@ -18,7 +18,7 @@
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
       
-                  <router-link v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
+                  <router-link active-class = 'active' v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
 
         
                 
@@ -77,8 +77,15 @@
     { name: 'Dashboard', href: '/', current: true },
     { name: 'About', href: '/about', current: false },
     { name: 'Option', href: '/option', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    // { name: 'Calendar', href: '#', current: false },
   ]
 
 
   </script>
+
+  <style scoped>
+  .active {
+    color: yellow;
+    font-weight: 700;
+  }
+  </style>

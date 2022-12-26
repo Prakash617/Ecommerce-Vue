@@ -44,17 +44,20 @@
       </TabPanels>
     </TabGroup>
   </div>
-  <div>
+  <!-- <div>
     <GoogleLogin :callback="callback" />
-  </div>
+  </div> -->
   <div>
 
-    <button @click="login">Login with Google</button>
+    <!-- <button @click="login">Login with Google</button> -->
     <h1>{{ store.count }}</h1>
     <h1>{{ store.doubleCount }}</h1>
     <h1>{{ store.count }}</h1>
     <div>
       <button @click="store.increment" class="btn p-3  border-4 border-red-400 bg-red-300 text-white">Increment</button>
+    </div>
+    <div>
+      <!-- <DetailPet/> -->
     </div>
   
     
@@ -66,10 +69,11 @@ import { ref } from 'vue'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
 import { useCounterStore } from '../store/counter'
 import { UserCircleIcon } from '@heroicons/vue/24/outline';
+import DetailPet from '../components/pets/DetailPet.vue';
 
 const store = useCounterStore();
 
-console.log(store)
+// console.log(store)
 const categories = ref({
   Recent: [
     {
@@ -121,18 +125,18 @@ const categories = ref({
   ],
 })
 
-const callback = (response) => {
-  // This callback will be triggered when the user selects or login to
-  // his Google account from the popup
-  console.log("Handle the response", response)
-}
-async function login() {
-  try {
-    await this.$googleAuth.login()
-  } catch (error) {
-    console.error(error)
-  }
-}
+// const callback = (response) => {
+//   // This callback will be triggered when the user selects or login to
+//   // his Google account from the popup
+//   console.log("Handle the response", response)
+// }
+// async function login() {
+//   try {
+//     await this.$googleAuth.login()
+//   } catch (error) {
+//     console.error(error)
+//   }
+// }
 
 </script>
   

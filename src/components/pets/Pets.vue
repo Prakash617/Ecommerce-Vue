@@ -15,10 +15,17 @@
   </div>
 </template>
 
-<script setup>
+<!-- <script setup>
 import Pet from "./pet.vue";
 
 
 const props = defineProps(['pets'])
 
+</script> -->
+<script setup>
+import Pet from './pet.vue';
+const props = defineProps(['pets']);
+
 </script>
+<style scoped>
+</style>

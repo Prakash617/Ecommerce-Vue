@@ -12,51 +12,31 @@
 </template>
 <script setup>
 
-import Pets from "../components/pets/pets.vue"
-import AddPets from "../components/pets/AddPet.vue"
+import Pets from "../components/pets/Pets.vue";
+import AddPets from "../components/pets/AddPet.vue";
+
 // import EditPet from "../components/pets/EditPet.vue"
+// import fetchPetByID from '../helper/index'
+import { fetchPet  } from "../helper";
 import { ref, onMounted } from "vue";
 
-
 // const data = ref([])
+
 const pets = ref([])
-// var cities = ['ktm','btk','ltk']
-// const citiess = ref(cities)
-// const getUserName = (name)=>{
-//         console.log(name)
-    
-//         alert(name)
-//         return name
 
-    
-// }
 const url = "https://639d448e16d1763ab15be5cb.mockapi.io/api/pets/mypets"
-// const displayemit=(e) => {
-//     data.value={...data.value,e}
-    
-// }
-// const displayPet=(pet) => {
-//   pets.value=[...pets.value,pet]
-//   console.log('emited',pets.value)
-    
-// }
-const fetchPet = async() =>{
-      const res = await fetch(
-        url
-      );
-      const data = await res.json();
-    //   console.log(data)
-      
-      return data;
-    }
 
-const fetchPetByID = async(id)=> {
-      const res = await fetch(
-        `${url}/${id}`
-      );
-      const data = await res.json();
-      return data;
-    }
+
+
+// const fetchPetByID = async(id)=> {
+//       const res = await fetch(
+//         `${url}/${id}`
+//       );
+//       const data = await res.json();
+//       return data;
+//     }
+// const  fetchPetByID =  await fetchPetByID(id)
+
 
  onMounted(async() => {
     pets.value = await fetchPet()
@@ -144,7 +124,7 @@ const addPet = async(pet)=> {
       console.log("data",data)
       pets.value=[...pets.value,data]
       
-    }
+    };
 </script>
 
 <style>

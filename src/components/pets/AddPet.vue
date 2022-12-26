@@ -48,8 +48,8 @@ const pet = reactive({
   url: "",
   favorate:false,
 
-})
-const emit = defineEmits("getPet")
+});
+const emit = defineEmits("getPet");
 
 
 
@@ -72,8 +72,7 @@ const onSubmit = (e) => {
   pet.url = ""
   pet.favorate=false,
   console.log('after',pet)
-}
-
+};
 </script>
 <style >
     
